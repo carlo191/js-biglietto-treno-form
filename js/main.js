@@ -1,4 +1,73 @@
-const km = parseInt(document.getElementById("infoKm").value);
+const htmlCard = `<section class="calcolate-ticket bg-white mx-5 hidden" id="bigliettoCardDetails">
+  <div class="container">
+    <div class="row">
+      <!-- Prima card 
+      <h3 class="mt-2">DETTAGLIO PASSEGERI</h3>
+      <hr />
+      <div class="col-4">
+        <div class="card">
+          <div class="card-body">
+            <p class="infoName" id="infoName">NOME PASSEGERO</p>
+          </div>
+        </div>
+      </div>
+
+       Seconda card 
+      <div class="col-2">
+        <div class="card">
+          <div class="card-body">
+            <p>Offerta</p>
+            <p>Biglietto Standard</p>
+          </div>
+        </div>
+      </div>
+
+      Terza card 
+      <div class="col-2">
+        <div class="card">
+          <div class="card-body">
+            <p>Carrozza</p>
+            <p>5</p>
+          </div>
+        </div>
+      </div>
+
+       Quarta card 
+      <div class="col-2">
+        <div class="card">
+          <div class="card-body">
+            <p>Codice CP</p>
+            <p>92911</p>
+          </div>
+        </div>
+      </div>
+
+       Quinta card 
+      <div class="col-2">
+        <div class="card">
+          <div class="card-body">
+            <p>Costo biglietto</p>
+            <p></p>
+          </div>
+        </div>
+      </div>
+      <hr />
+    </div>
+  </div>
+</section>
+      </div>
+    </section> -->`;
+
+const biglietto = document.getElementById("generaButton");
+biglietto.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  calcolaPrezzoBiglietto();
+
+  // Mostra la card
+  document.getElementById("bigliettoCard").classList.remove("hidden");
+  document.getElementById("bigliettoCardDetails").classList.remove("hidden");
+});
 
 // Funzione per calcolare il prezzo del biglietto
 function calcolaPrezzoBiglietto() {
@@ -30,23 +99,23 @@ function calcolaPrezzoBiglietto() {
   // Calcolo del prezzo finale
   let prezzoFinale = prezzoBase * (1 - sconto);
 
-  // Stampare il risultato in un alert o nella console
+  // Stampa il risultato nella console
   console.log("Prezzo totale del biglietto: €" + prezzoFinale.toFixed(2));
+
+  // Se il prezzo non è valido
   if (isNaN(prezzoFinale)) {
     console.log("Per favore riprova");
   }
 }
 
-// Event listener per il pulsante "Genera"
-const generaButton = document.getElementById("generaButton");
-generaButton.addEventListener(`click`, () => {
-  calcolaPrezzoBiglietto();
-});
-
 // Event listener per il pulsante "Annulla"
 const annullaButton = document.getElementById("annullaButton");
-annullaButton.addEventListener(`click`, () => {
+annullaButton.addEventListener("click", () => {
   document.getElementById("infoKm").value = "";
   document.getElementById("infoAge").value = "";
   document.getElementById("inputName").value = "";
+
+  // Nascondi di nuovo la card
+  document.getElementById("bigliettoCard").classList.add("hidden");
+  document.getElementById("bigliettoCardDetails").classList.add("hidden");
 });
