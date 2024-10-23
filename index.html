@@ -28,6 +28,7 @@
         CALCOLA IL PREZZO DEL TUO BIGLIETTO
       </h1>
     </div>
+
     <section class="calcolate-ticket bg-white mx-5">
       <div class="container">
         <div class="row">
@@ -35,7 +36,7 @@
           <div class="col-4">
             <div class="card">
               <div class="card-body">
-                <p class="infoName">Nome Cognome</p>
+                <p class="infoName" id="infoName" min="3">Nome Cognome</p>
                 <form>
                   <input
                     type="text"
@@ -57,6 +58,73 @@
                 <form>
                   <input
                     type="text"
+                    id="infoKm"
+                    name="infoKm"
+                    class="form-control"
+                    placeholder="10"
+                    min="1"
+                  />
+                </form>
+              </div>
+            </div>
+            <div class="bottoni">
+              <button class="generaBottoni" id="generaButton">Genera</button>
+              <button class="annullaBottoni" id="annullaButton">Annulla</button>
+            </div>
+          </div>
+
+          <!-- Terza card -->
+          <div class="col-4">
+            <div class="card">
+              <div class="card-body">
+                <p class="infoAge">Fascia d'età</p>
+
+                <select class="etaOptions" id="infoAge">
+                  <option value="minorenne">Minorenne</option>
+                  <option value="maggiorenne">Maggiorenne</option>
+                  <option value="over65">Over 65</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fine row -->
+      </div>
+    </section>
+    <!-- Inizio seconda section -->
+    <div class="second-title">
+      <h2 class="text-center text-light mt-3">IL TUO BIGLIETTO</h2>
+    </div>
+
+    <section class="calcolate-ticket bg-white mx-5">
+      <div class="container">
+        <div class="row">
+          <!-- Prima card -->
+          <div class="col-4">
+            <div class="card">
+              <div class="card-body">
+                <p class="infoName" id="infoName">Nome Cognome</p>
+                <form>
+                  <input
+                    type="text"
+                    id="inputName"
+                    name="inputName"
+                    class="form-control"
+                    placeholder="Nome"
+                  />
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Seconda card -->
+          <div class="col-2">
+            <div class="card">
+              <div class="card-body">
+                <p class="infoKm">Km da percorrere</p>
+                <form>
+                  <input
+                    type="text"
                     id="inputKm"
                     name="inputKm"
                     class="form-control"
@@ -65,12 +133,23 @@
                 </form>
               </div>
             </div>
-            <button>Genera</button>
-            <button>Annulla</button>
           </div>
 
           <!-- Terza card -->
-          <div class="col-4">
+          <div class="col-2">
+            <div class="card">
+              <div class="card-body">
+                <p class="infoAge">Fascia d'età</p>
+                <select class="form-select" id="floatingSelectGrid">
+                  <option>Maggiorenne</option>
+                  <option>Over 65</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quarta card -->
+          <div class="col-2">
             <div class="card">
               <div class="card-body">
                 <p class="infoAge">Fascia d'età</p>
@@ -87,10 +166,12 @@
     </section>
 
     <!--BOOTSTRAP JS-->
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-Ysh6d/25J6EfNBxSnzKmY1BpILQkO7iuHkCmHOodPBZygJz2lzDd3b5PUCPDVfy8"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
