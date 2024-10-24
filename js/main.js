@@ -1,62 +1,5 @@
-const htmlCard = `<section class="calcolate-ticket bg-white mx-5 hidden" id="bigliettoCardDetails">
-  <div class="container">
-    <div class="row">
-      <!-- Prima card 
-      <h3 class="mt-2">DETTAGLIO PASSEGERI</h3>
-      <hr />
-      <div class="col-4">
-        <div class="card">
-          <div class="card-body">
-            <p class="infoName" id="infoName">NOME PASSEGERO</p>
-          </div>
-        </div>
-      </div>
-
-       Seconda card 
-      <div class="col-2">
-        <div class="card">
-          <div class="card-body">
-            <p>Offerta</p>
-            <p>Biglietto Standard</p>
-          </div>
-        </div>
-      </div>
-
-      Terza card 
-      <div class="col-2">
-        <div class="card">
-          <div class="card-body">
-            <p>Carrozza</p>
-            <p>5</p>
-          </div>
-        </div>
-      </div>
-
-       Quarta card 
-      <div class="col-2">
-        <div class="card">
-          <div class="card-body">
-            <p>Codice CP</p>
-            <p>92911</p>
-          </div>
-        </div>
-      </div>
-
-       Quinta card 
-      <div class="col-2">
-        <div class="card">
-          <div class="card-body">
-            <p>Costo biglietto</p>
-            <p></p>
-          </div>
-        </div>
-      </div>
-      <hr />
-    </div>
-  </div>
-</section>
-      </div>
-    </section> -->`;
+const passengerName = document.getElementById("passengerName");
+const infoName = document.getElementById("inputName");
 
 const biglietto = document.getElementById("generaButton");
 biglietto.addEventListener("click", function (event) {
@@ -67,6 +10,7 @@ biglietto.addEventListener("click", function (event) {
   // Mostra la card
   document.getElementById("bigliettoCard").classList.remove("hidden");
   document.getElementById("bigliettoCardDetails").classList.remove("hidden");
+  passengerName.innerText = infoName.value;
 });
 
 // Funzione per calcolare il prezzo del biglietto
