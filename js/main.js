@@ -1,7 +1,7 @@
 const passengerName = document.getElementById("passengerName");
 const infoName = document.getElementById("inputName");
 const typeTicket = document.getElementById("typeTicket");
-const typePrice = document.getElementById("ticketPrice"); // Assicurati che l'ID sia "ticketPrice"
+const typePrice = document.getElementById("ticketPrice"); 
 
 const biglietto = document.getElementById("generaButton");
 biglietto.addEventListener("click", function (event) {
